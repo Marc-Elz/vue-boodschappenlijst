@@ -1,0 +1,29 @@
+table.table1{
+    border-collapse: collapse;
+    width: 500px;
+    background-color: bisque;
+}
+
+table.table2{
+    border-collapse: collapse;
+    width: 500px;
+}
+
+table.table3{
+    border-collapse: collapse;
+    width: 500px;
+}
+
+tr, td{
+    border: 1px solid #888;
+    padding: 10px;
+}
+
+th{
+    background-color: rgb(227, 138, 30)
+}
+
+button{
+    background-color: azure;
+    width: 100px;
+}
