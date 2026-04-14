@@ -19,23 +19,29 @@ const calcSubTotal = product => {
 
 <template>
     <table>
-        <tr>
-            <th>product</th>
-            <th>productcost</th>
-            <th>quantity</th>
-            <th>subtotals</th>
-        </tr>
-        <tr v-for="(product, index) in products" :key="index">
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
-            <td><input type="number" v-model.number="product.quantity" min="0" /></td>
-            <td>{{ calcSubTotal(product).toFixed(2) }}</td>
+        <thead>
+            <tr>
+                <th>product</th>
+                <th>productcost</th>
+                <th>quantity</th>
+                <th>subtotals</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(product, index) in products" :key="index">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td><input type="number" v-model.number="product.quantity" min="0" /></td>
+                <td>{{ calcSubTotal(product).toFixed(2) }}</td>
 
-            <!--- Have to add the subtotals in the same row-->
-        </tr>
-        <tr>
-            <td colspan="3">Total</td>
-            <td>{{ productTotal }}</td>
-        </tr>
+                <!--- Have to add the subtotals in the same row-->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total</td>
+                <td>{{ productTotal }}</td>
+            </tr>
+        </tfoot>
     </table>
 </template>
