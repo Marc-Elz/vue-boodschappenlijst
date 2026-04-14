@@ -11,7 +11,7 @@ const products = ref([
 </script>
 
 <template>
-    <RouterLink to="/grocery/" v-model="products">Overview Page</RouterLink>
-    <RouterLink to="/grocery/edit">Edit Page</RouterLink>
+    <RouterLink to="/groceries/overview" v-model="products">Overview Page</RouterLink>
+    <RouterLink to="/groceries/edit">Edit Page</RouterLink>
     <RouterView />
 </template>
