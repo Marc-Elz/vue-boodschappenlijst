@@ -7,11 +7,11 @@
             </li>
             <li>
                 Price:
-                <input type="number" , step="0.01" min="0" />
+                <input type="number" v-model.number="groceryCopy.grocery.price" step="0.01" min="0" />
             </li>
             <li>
                 Amount:
-                <input type="number" v-model.number="groceryCopy.quantity" min="0" />
+                <input type="number" v-model.number="groceryCopy.grocery.quantity" min="0" />
             </li>
             <button @click="$emit(submitEvent)">submit</button>
         </ul>

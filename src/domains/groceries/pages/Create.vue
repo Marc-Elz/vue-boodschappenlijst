@@ -13,5 +13,5 @@ const handeSubmit = newGrocery => {
     addGrocery(newGrocery);
 };
 
-const grocery = {id: undefined, name: '', price: 0, amount: 0};
+const grocery = {id: undefined, name: '', price: 0, quantity: 0};
 </script>
