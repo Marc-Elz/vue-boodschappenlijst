@@ -27,11 +27,12 @@
 
 <script setup>
 import {computed} from 'vue';
+import {getAllGroceries} from '../store.js';
 
-const products = defineModel();
+const products = getAllGroceries.value;
 
 const productTotal = computed(() => {
-    return products.value.reduce((acc, product) => acc + calcSubTotal(product), 0).toFixed(2);
+    return products.reduce((acc, product) => acc + calcSubTotal(product), 0).toFixed(2);
 });
 
 const calcSubTotal = product => {
