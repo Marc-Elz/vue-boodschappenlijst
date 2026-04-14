@@ -14,8 +14,6 @@
                 <td>{{ product.price }}</td>
                 <td><input type="number" v-model.number="product.quantity" min="0" /></td>
                 <td>{{ calcSubTotal(product).toFixed(2) }}</td>
-
-                <!--- Have to add the subtotals in the same row-->
             </tr>
         </tbody>
         <tfoot>
