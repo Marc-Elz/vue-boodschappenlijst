@@ -3,17 +3,17 @@
         <ul>
             <li>
                 Name:
-                <input v-model="groceryCopy.grocery.name" placeholder="placeholder" />
+                <input v-model="groceryCopy.name" placeholder="placeholder" />
             </li>
             <li>
                 Price:
-                <input type="number" v-model.number="groceryCopy.grocery.price" step="0.01" min="0" />
+                <input type="number" v-model.number="groceryCopy.price" step="0.01" min="0" />
             </li>
             <li>
                 Amount:
-                <input type="number" v-model.number="groceryCopy.grocery.quantity" min="0" />
+                <input type="number" v-model.number="groceryCopy.quantity" min="0" />
             </li>
-            <button @click="$emit(submitEvent)">submit</button>
+            <button @click.prevent="emit('submitEvent', groceryCopy)">submit</button>
         </ul>
     </form>
     Watchers:
@@ -22,34 +22,22 @@
     {{ groceryCopy }}
     <br />
     Props:
-    {{ props }}
+    {{ grocery }}
 </template>
 
 <script setup>
-import {ref, toRaw} from 'vue';
-// props
-const props = defineProps({
+import {ref} from 'vue';
+
+const emit = defineEmits(['submitEvent']);
+
+const {grocery} = defineProps({
     grocery: {
-        type: Object,
+        id: Number,
+        name: String,
+        price: Number,
+        quantity: Number,
     },
 });
 
-// Grocery
-console.log('form for grocery:');
-console.log(props);
-// maak een copy (shallow copy voldoende?)
-
-//const groceryCopy = ref(Object.assign({}, props));
-const groceryCopy = ref(structuredClone(toRaw(props)));
-
-// PlaceholderValue should be dynamic, either it is an edited item or a new item.
-// Maar denk moet me eerst focussen op he adden van gegevens
-
-defineEmits(['submit']);
-
-// defineProps + defineEmits / defineModel
-
-const submitEvent = () => {
-    emit('submit', groceryCopy);
-};
+const groceryCopy = ref({...grocery});
 </script>
