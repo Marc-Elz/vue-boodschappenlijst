@@ -16,5 +16,5 @@ const updateGrocery = newGrocery => {
     router.push('/groceries/overview');
 };
 
-const grocery = {id: 7, name: '', price: 0, quantity: 0};
+const grocery = {id: Math.floor(Math.random() * 10000), name: '', price: 0, quantity: 0};
 </script>
