@@ -4,6 +4,7 @@ import Overview from './pages/Overview.vue';
 
 export const routes = [
     {path: '/groceries/overview', component: Overview},
+    {path: '', component: Overview},
     {path: '/groceries/create', component: Create},
     {path: '/groceries/edit', component: Edit},
 ];
