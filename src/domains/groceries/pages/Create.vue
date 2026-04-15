@@ -12,8 +12,6 @@ import {useRouter} from 'vue-router';
 const router = useRouter();
 
 const updateGrocery = newGrocery => {
-    console.log('Handling adding of new grocery:');
-    console.log(newGrocery);
     addGrocery(newGrocery);
     router.push('/groceries/overview');
 };

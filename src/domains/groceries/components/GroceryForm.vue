@@ -16,13 +16,6 @@
             <button @click.prevent="emit('submitEvent', groceryCopy)">submit</button>
         </ul>
     </form>
-    Watchers:
-    <br />
-    Copy:
-    {{ groceryCopy }}
-    <br />
-    Props:
-    {{ grocery }}
 </template>
 
 <script setup>
