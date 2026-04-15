@@ -19,6 +19,9 @@ export const editGrocery = grocery => {
 };
 
 export const removeGrocery = id => {
-    console.log(id);
-    delete groceries.value[id];
+    const index = groceries.value.indexOf(getGroceryById(id).value);
+
+    if (index > -1) {
+        groceries.value.splice(index, 1);
+    }
 };
